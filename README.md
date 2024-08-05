@@ -1,4 +1,2 @@
-# MingPin
-名品伴学
-
-.....胡兵修改
+# MingPin-FrontEnd
+名品伴学，前端仓库
