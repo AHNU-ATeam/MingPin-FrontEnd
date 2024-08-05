@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+	"pages/contacts/index",
+	"pages/profile/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#fab434",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/底部导航栏图片/首页.png",
+        "selectedIconPath": "static/底部导航栏图片/首页 (1).png"
+      },
+      {
+        "pagePath": "pages/contacts/index",
+        "text": "通讯录",
+        "iconPath": "static/底部导航栏图片/通讯录.png",
+        "selectedIconPath": "static/底部导航栏图片/通讯录 (1).png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "static/底部导航栏图片/我的.png",
+        "selectedIconPath": "static/底部导航栏图片/我的 (1).png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
