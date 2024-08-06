@@ -1,0 +1,241 @@
+/* 水平间距 */
+/* 水平间距 */
+@font-face {
+  font-family: "iconfont"; /* Project id 4643668 */
+  src: url('//at.alicdn.com/t/c/font_4643668_vpbhn0s9b2g.woff2?t=1722903569636') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4643668_vpbhn0s9b2g.woff?t=1722903569636') format('woff'),
+       url('//at.alicdn.com/t/c/font_4643668_vpbhn0s9b2g.ttf?t=1722903569636') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-shouye:before {
+  content: "\e64f";
+}
+.icon-wode:before {
+  content: "\e602";
+}
+.icon-tongxunlu:before {
+  content: "\e60c";
+}
+.icon-banjixiangce:before {
+  content: "\e729";
+  color: orange;
+}
+.icon-banjidongtai:before {
+  content: "\e616";
+  color: cornflowerblue;
+}
+.icon-xueqingfankui:before {
+  content: "\e634";
+  color: palevioletred;
+}
+.icon-jifenfafang:before {
+  content: "\e672";
+  color: gold;
+}
+.icon-yiqiandao:before {
+  content: "\e645";
+  color: orange;
+}
+.icon-weiqiandao:before {
+  content: "\e646";
+}
+.icon-xueyuanguanli:before {
+  content: "\e613";
+  color: burlywood;
+}
+.icon-banjikaoqin:before {
+  content: "\e61d";
+  color: palegreen;
+}
+.icon-shouzhiguanli:before {
+  content: "\ec4b";
+  color: indianred;
+}
+.icon-Group-copy:before {
+  content: "\e636";
+  color: green;
+}
+.icon-gengduo1:before {
+  content: "\e66a";
+}
+.icon-meirishipu:before {
+  content: "\e6d1";
+  color: darkorange;
+}
+.icon-gengduo:before {
+  color: green;
+  content: "\e604";
+}
+.icon-banjiguanli-:before {
+  color: dodgerblue;
+  content: "\e61b";
+}
+.icon-yixietubiao-:before {
+  color: greenyellow;
+  content: "\e606";
+}
+.icon-jiaoshitongji-01:before {
+  color: hotpink;
+  content: "\e62f";
+}
+.icon-renliandaka:before {
+  color: royalblue;
+  content: "\e605";
+}
+.container {
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.swiper {
+  height: 100px;
+}
+.swiper-item {
+  display: block;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.card3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.card3-left,
+.card3-right {
+  margin-top: -15px;
+  padding: 10px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+}
+.attended .number {
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+}
+.not-attended .number {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+.signin {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.image {
+  width: 25px;
+  height: 25px;
+}
+.icontext {
+  font-size: 10px;
+  border-radius: 2px;
+  color: black;
+}
+.grid-item-box {
+  height: 50px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+}
+.tab {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  text-align: center;
+  /* Center text inside */
+  height: 100%;
+  /* Make sure it takes the full height */
+  background-color: gainsboro;
+}
+.tab.active {
+  background-color: orange;
+}
+.content {
+  display: flex;
+  align-items: center;
+}
+.circle-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  width: 100px;
+  /* Smaller width */
+  height: 100px;
+  /* Smaller height */
+  border-radius: 50%;
+  border: 8px solid #f66;
+  /* Smaller border */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.circle::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #f99;
+  /* Smaller border */
+  position: absolute;
+  top: -8px;
+  /* Adjust according to new border size */
+  left: -8px;
+  /* Adjust according to new border size */
+  z-index: -1;
+}
+.circle-text {
+  font-size: 14px;
+  color: #333;
+}
+.circle-number {
+  font-size: 24px;
+  color: #f33;
+}
+.info {
+  flex: 1;
+  padding-left: 20px;
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.info-label {
+  width: 50px;
+  color: #333;
+}
+.info-number {
+  font-weight: bold;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
