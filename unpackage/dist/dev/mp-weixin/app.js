@@ -2,9 +2,14 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
 if (!Math) {
+  "./pages/chooseIdentity/chooseIdentity.js";
   "./pages/index/index.js";
   "./pages/contact/contact.js";
   "./pages/profile/profile.js";
+  "./pages/hprofile/hprofile.js";
+  "./pages/tindex/tindex.js";
+  "./pages/login/login.js";
+  "./pages/sindex/sindex.js";
 }
 const _sfc_main = {
   onLaunch: function() {
@@ -20,6 +25,7 @@ const _sfc_main = {
 };
 function createApp() {
   const app = common_vendor.createSSRApp(_sfc_main);
+  app.use(common_vendor.uviewPlus);
   return {
     app
   };

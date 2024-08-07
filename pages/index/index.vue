@@ -5,13 +5,13 @@
 				<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay"
 					:interval="interval" :duration="duration">
 					<swiper-item>
-						<view class="swiper-item "><image src="../../static/swiper/iamge1.jpeg"></image></view>
+						<view class="swiper-item "><image src="../../static/hindexswiper/iamge1.jpeg"></image></view>
+					</swiper-item>
+					<swiper-item>	
+						<view class="swiper-item "><image src="../../static/hindexswiper/image2.jpeg"></image></view>
 					</swiper-item>
 					<swiper-item>
-						<view class="swiper-item "><image src="../../static/swiper/image2.jpeg"></image></view>
-					</swiper-item>
-					<swiper-item>
-						<view class="swiper-item "><image src="../../static/swiper/image3.jpeg"></image></view>
+						<view class="swiper-item "><image src="../../static/hindexswiper/image3.jpeg"></image></view>
 					</swiper-item>
 				</swiper>
 			</uni-card>

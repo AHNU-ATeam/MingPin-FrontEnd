@@ -1,5 +1,6 @@
 /* 水平间距 */
 /* 水平间距 */
+/* uni.scss */
 @font-face {
   font-family: "iconfont"; /* Project id 4643668 */
   src: url('//at.alicdn.com/t/c/font_4643668_vpbhn0s9b2g.woff2?t=1722903569636') format('woff2'),

@@ -1,8 +1,13 @@
 {
   "pages": [
+    "pages/chooseIdentity/chooseIdentity",
     "pages/index/index",
     "pages/contact/contact",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/hprofile/hprofile",
+    "pages/tindex/tindex",
+    "pages/login/login",
+    "pages/sindex/sindex"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -18,20 +23,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "static/bottomicon/shouye.png",
-        "selectedIconPath": "static/bottomicon/shouye_1.png",
+        "iconPath": "static/bottomicon/首页.png",
+        "selectedIconPath": "static/bottomicon/首页 (1).png",
         "text": "首页"
       },
       {
         "pagePath": "pages/contact/contact",
-        "iconPath": "static/bottomicon/tongxunlu_1.png",
-        "selectedIconPath": "static/bottomicon/tongxunlu.png",
+        "iconPath": "static/bottomicon/通讯录.png",
+        "selectedIconPath": "static/bottomicon/通讯录 (1).png",
         "text": "通讯录"
       },
       {
-        "pagePath": "pages/profile/profile",
-        "iconPath": "static/bottomicon/wode.png",
-        "selectedIconPath": "static/bottomicon/wode_active.png",
+        "pagePath": "pages/hprofile/hprofile",
+        "iconPath": "static/bottomicon/我的.png",
+        "selectedIconPath": "static/bottomicon/我的 (1).png",
         "text": "我的"
       }
     ]

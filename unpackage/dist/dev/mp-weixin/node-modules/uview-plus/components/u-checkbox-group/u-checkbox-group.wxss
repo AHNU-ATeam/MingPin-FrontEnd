@@ -1,0 +1,27 @@
+/* 水平间距 */
+/* 水平间距 */
+/* uni.scss */
+.u-empty.data-v-504cd728,
+.u-empty__wrap.data-v-504cd728,
+.u-tabs.data-v-504cd728,
+.u-tabs__wrapper.data-v-504cd728,
+.u-tabs__wrapper__scroll-view-wrapper.data-v-504cd728,
+.u-tabs__wrapper__scroll-view.data-v-504cd728,
+.u-tabs__wrapper__nav.data-v-504cd728,
+.u-tabs__wrapper__nav__line.data-v-504cd728 {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.u-checkbox-group--row.data-v-504cd728 {
+  display: flex;
+  flex-flow: row wrap;
+}
+.u-checkbox-group--column.data-v-504cd728 {
+  display: flex;
+  flex-direction: column;
+}

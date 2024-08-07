@@ -1,5 +1,6 @@
 /* 水平间距 */
 /* 水平间距 */
+/* uni.scss */
 .uni-section {
   background-color: #fff;
 }
