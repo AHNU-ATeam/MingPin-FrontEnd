@@ -1,0 +1,121 @@
+
+.container {
+		width: 94%;
+		margin-left: 3%;
+		margin-top: 2%;
+		background-color: #efefef;
+}
+
+	/* employee_title */
+.employee_title {
+		font-size: 35rpx;
+}
+.employee_title:nth-child(2) {
+		color: #FF9933;
+		padding: 5rpx;
+		font-size: 35rpx !important;
+}
+.employee_title:nth-child(4) {
+		color: gray;
+		padding: 5rpx;
+		font-size: 24rpx;
+}
+
+	/* employee_information */
+.information_halfone {
+		height: 60%;
+		border-bottom: gray 1px dashed;
+		box-sizing: border-box;
+}
+.employee_information {
+		width: 100%;
+		height: 15vh;
+		background-color: white;
+		margin-top: 2vh;
+		border-radius: 10rpx;
+		position: relative;
+		/* 阴影 */
+		box-shadow: 0 0 20rpx #dcdcdc;
+}
+.employee_img {
+		height: 80rpx;
+		width: 80rpx;
+		border-radius: 50%;
+		margin-left: 10rpx;
+		margin-top: calc((9vh - 80rpx) / 2);
+}
+.employee_contact {
+		position: absolute;
+		left: 120rpx;
+		top: 0rpx;
+		height: 80rpx;
+		margin-top: calc((9vh - 80rpx) / 2);
+}
+.employee_name {
+		display: inline-block;
+		font-size: 30rpx;
+}
+.employee_duties {
+		display: inline-block;
+		color: red;
+		background-color: #FDE7E9;
+		font-size: 30rpx;
+}
+.employee_phone {
+		display: inline-block;
+		color: gray;
+		font-size: 25rpx;
+}
+.number_shift {
+		position: absolute;
+		right: 10rpx;
+		top: 0rpx;
+		font-size: 30rpx;
+		margin-top: calc((9vh - 30rpx) / 2);
+}
+
+	/* information_halftwo */
+.information_halftwo {
+		height: 40%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		position: relative;
+}
+.modify,
+	.delete {
+		display: inline-block;
+		font-size: 30rpx;
+		color: #FF9933;
+		background-color: white;
+		border: 1px solid #FF9933;
+		width: 10vh;
+		height: 4vh;
+		text-align: center;
+		line-height: 4vh;
+		border-radius: 7rpx;
+}
+.delete {
+		position: absolute;
+		right: 10rpx;
+}
+.modify {
+		position: absolute;
+		right: 32rpx;
+		margin-right: 10vh;
+}
+
+	/* add_employees */
+.add_employees {
+		position: fixed;
+		bottom: 2vh;
+		right: 20rpx;
+}
+.add_buttom {
+		margin-right: 20rpx;
+}
+
+	/* bottom_padding */
+.bottom_padding {
+		height: 12vh;
+}

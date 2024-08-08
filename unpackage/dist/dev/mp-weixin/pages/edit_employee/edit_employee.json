@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "员工管理",
+  "usingComponents": {
+    "up-upload": "../../node-modules/uview-plus/components/u-upload/u-upload",
+    "up-radio": "../../node-modules/uview-plus/components/u-radio/u-radio",
+    "up-radio-group": "../../node-modules/uview-plus/components/u-radio-group/u-radio-group",
+    "up-button": "../../node-modules/uview-plus/components/u-button/u-button"
+  }
+}

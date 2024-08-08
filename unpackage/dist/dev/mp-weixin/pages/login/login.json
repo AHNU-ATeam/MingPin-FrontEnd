@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "登录",
+  "usingComponents": {
+    "up-input": "../../node-modules/uview-plus/components/u-input/u-input",
+    "up-button": "../../node-modules/uview-plus/components/u-button/u-button",
+    "up-checkbox": "../../node-modules/uview-plus/components/u-checkbox/u-checkbox",
+    "up-checkbox-group": "../../node-modules/uview-plus/components/u-checkbox-group/u-checkbox-group"
+  }
+}

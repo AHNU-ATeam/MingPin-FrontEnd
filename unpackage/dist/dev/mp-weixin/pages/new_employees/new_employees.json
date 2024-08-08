@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "添加员工",
+  "usingComponents": {
+    "up-upload": "../../node-modules/uview-plus/components/u-upload/u-upload",
+    "up-button": "../../node-modules/uview-plus/components/u-button/u-button"
+  }
+}

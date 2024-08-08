@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/chooseIdentity/chooseIdentity",
+    "pages/index/index",
+    "pages/contact/contact",
+    "pages/profile/profile",
+    "pages/hprofile/hprofile",
+    "pages/tindex/tindex",
+    "pages/login/login",
+    "pages/sindex/sindex",
+    "pages/employee_management/employee_management",
+    "pages/personal_information/personal_information",
+    "pages/new_employees/new_employees",
+    "pages/edit_employee/edit_employee"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FFA500",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/bottomicon/首页.png",
+        "selectedIconPath": "static/bottomicon/首页 (1).png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "iconPath": "static/bottomicon/通讯录.png",
+        "selectedIconPath": "static/bottomicon/通讯录 (1).png",
+        "text": "通讯录"
+      },
+      {
+        "pagePath": "pages/hprofile/hprofile",
+        "iconPath": "static/bottomicon/我的.png",
+        "selectedIconPath": "static/bottomicon/我的 (1).png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
