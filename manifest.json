@@ -1,5 +1,5 @@
 {
-    "name" : "Banxue-front",
+    "name" : "名品伴学",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -50,7 +50,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx24a9448492ef160b",
         "setting" : {
             "urlCheck" : false
         },
