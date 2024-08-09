@@ -1,25 +1,31 @@
 <template>
 	<view>
 		<scroll-view class="container">
-			<uni-card is-full :is-shadow="false" >
+			<uni-card is-full :is-shadow="false">
 				<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay"
 					:interval="interval" :duration="duration">
 					<swiper-item>
-						<view class="swiper-item "><image src="../../static/hindexswiper/iamge1.jpeg"></image></view>
-					</swiper-item>
-					<swiper-item>	
-						<view class="swiper-item "><image src="../../static/hindexswiper/image2.jpeg"></image></view>
+						<view class="swiper-item ">
+							<image src="../../static/hindexswiper/iamge1.jpeg"></image>
+						</view>
 					</swiper-item>
 					<swiper-item>
-						<view class="swiper-item "><image src="../../static/hindexswiper/image3.jpeg"></image></view>
+						<view class="swiper-item ">
+							<image src="../../static/hindexswiper/image2.jpeg"></image>
+						</view>
+					</swiper-item>
+					<swiper-item>
+						<view class="swiper-item ">
+							<image src="../../static/hindexswiper/image3.jpeg"></image>
+						</view>
 					</swiper-item>
 				</swiper>
 			</uni-card>
-    
+
 			<uni-card :is-shadow="false" margin="6px">
 				<uni-section title="校区管理" type="line">
 					<uni-grid :column="5" :highlight="true" @change="change" :showBorder="false">
-						<uni-grid-item v-for="(item, index) in areaManageList" :index="index" :key="index">
+						<uni-grid-item v-for="(item, index) in areaManageList" :index="index" :key="index" >
 							<view class="grid-item-box" style="background-color: #fff;">
 								<view :class="item.iconurl"></view>
 								<text class="icontext">{{item.text}}</text>
@@ -210,17 +216,18 @@
 			change(e) {
 				let {
 					index
-				} = e.detail
-				this.list[index].badge && this.list[index].badge++
+				} = e.detail;
 
-				uni.showToast({
-					title: `点击第${index+1}个宫格`,
-					icon: 'none'
-				})
-				if(index===0)
-				{
+				// 检查点击的宫格是否为“员工信息”
+				if (this.areaManageList[index].badge === '0') {
 					uni.navigateTo({
 						url: `/pages/employee_management/employee_management`
+					});
+				} else {
+					// 增加其他宫格的点击处理逻辑
+					uni.showToast({
+						title: `点击第${index+1}个宫格`,
+						icon: 'none'
 					});
 				}
 			},
@@ -242,8 +249,8 @@
 				this.dynamicList.splice(this.dynamicList.length - 1, 1)
 			},
 			selectTab(tab) {
-			      this.activeTab = tab;
-			    }
+				this.activeTab = tab;
+			}
 		}
 	}
 </script>
@@ -330,30 +337,35 @@
 		justify-content: center;
 		padding: 15px 0;
 	}
-.tabs {
-  display: flex;
-  justify-content: space-around;
- 
-}
 
-.tab {
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-bottom: 20px;
-  font-size: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
-  text-align: center;       /* Center text inside */
-  height: 100%;             /* Make sure it takes the full height */
-  background-color: gainsboro;
-}
+	.tabs {
+		display: flex;
+		justify-content: space-around;
 
-.tab.active {
-  background-color: orange;
-}
+	}
+
+	.tab {
+		padding-right: 10px;
+		padding-left: 10px;
+		margin-bottom: 20px;
+		font-size: 10px;
+		border-radius: 4px;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		/* Center horizontally */
+		align-items: center;
+		/* Center vertically */
+		text-align: center;
+		/* Center text inside */
+		height: 100%;
+		/* Make sure it takes the full height */
+		background-color: gainsboro;
+	}
+
+	.tab.active {
+		background-color: orange;
+	}
 
 	.content {
 		display: flex;
@@ -368,27 +380,33 @@
 	}
 
 	.circle {
-	  width: 100px;  /* Smaller width */
-	  height: 100px; /* Smaller height */
-	  border-radius: 50%;
-	  border: 8px solid #f66; /* Smaller border */
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	  position: relative;
+		width: 100px;
+		/* Smaller width */
+		height: 100px;
+		/* Smaller height */
+		border-radius: 50%;
+		border: 8px solid #f66;
+		/* Smaller border */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
 	}
-	
+
 	.circle::before {
-	  content: '';
-	  width: 100%;
-	  height: 100%;
-	  border-radius: 50%;
-	  border: 8px solid #f99; /* Smaller border */
-	  position: absolute;
-	  top: -8px; /* Adjust according to new border size */
-	  left: -8px; /* Adjust according to new border size */
-	  z-index: -1;
+		content: '';
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		border: 8px solid #f99;
+		/* Smaller border */
+		position: absolute;
+		top: -8px;
+		/* Adjust according to new border size */
+		left: -8px;
+		/* Adjust according to new border size */
+		z-index: -1;
 	}
 
 	.circle-text {

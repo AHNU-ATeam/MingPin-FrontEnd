@@ -115,14 +115,14 @@ const _sfc_main = {
       let {
         index
       } = e.detail;
-      this.list[index].badge && this.list[index].badge++;
-      common_vendor.index.showToast({
-        title: `点击第${index + 1}个宫格`,
-        icon: "none"
-      });
-      if (index === 0) {
+      if (this.areaManageList[index].badge === "0") {
         common_vendor.index.navigateTo({
           url: `/pages/employee_management/employee_management`
+        });
+      } else {
+        common_vendor.index.showToast({
+          title: `点击第${index + 1}个宫格`,
+          icon: "none"
         });
       }
     },

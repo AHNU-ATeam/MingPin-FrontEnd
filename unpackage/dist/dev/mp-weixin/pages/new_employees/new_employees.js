@@ -127,6 +127,47 @@ const _sfc_main = {
         });
         return;
       }
+      if (phone.value.length != 11) {
+        common_vendor.index.showToast({
+          title: "请输入正确的手机号",
+          icon: "none"
+        });
+        return;
+      }
+      common_vendor.index.request({
+        url: "http://119.45.239.3:8080/register",
+        // 替换为你的注册接口地址
+        method: "POST",
+        header: {
+          "content-type": "application/x-www-form-urlencoded"
+          // 设置请求头
+        },
+        data: {
+          role: "teacher",
+          phone: phone.value,
+          password: "123456"
+        },
+        success: (res) => {
+          if (res.data.code === 1) {
+            common_vendor.index.showToast({
+              title: "注册成功",
+              icon: "success"
+            });
+          } else {
+            common_vendor.index.showToast({
+              title: res.data.message || "注册失败",
+              icon: "none"
+            });
+          }
+        },
+        fail: (err) => {
+          common_vendor.index.showToast({
+            title: "请求失败，请检查网络",
+            icon: "none"
+          });
+          console.error(err);
+        }
+      });
       store.addEmployee({
         id: Date.now(),
         avatar: ((_a = fileList1.value[0]) == null ? void 0 : _a.url) || "https://via.placeholder.com/150",

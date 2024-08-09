@@ -177,10 +177,9 @@
 		position.value = role; // 设置职位为选择的角色
 		if (role === 'executive') {
 			position.value = '执行校长';
-			}
-			else{
-				position.value = '老师';
-			}
+		} else {
+			position.value = '老师';
+		}
 	};
 
 	// 处理性别变化
@@ -215,7 +214,52 @@
 			});
 			return;
 		}
+		
+		
+		if (phone.value.length != 11) {
+			
+			uni.showToast({
+				title: '请输入正确的手机号',
+				icon: 'none'
+			});
+			return;
+		}
+		// 执行注册逻辑
+		uni.request({
+			url: 'http://119.45.239.3:8080/register', // 替换为你的注册接口地址
+			method: 'POST',
+			header: {
+				'content-type': 'application/x-www-form-urlencoded' // 设置请求头
+			},
+			data: {
+				role: 'teacher',
+				phone: phone.value,
+				password: '123456'
+			},
+			success: (res) => {
+				if (res.data.code === 1) {
+					uni.showToast({
+						title: '注册成功',
+						icon: 'success'
+					});
 
+
+
+				} else {
+					uni.showToast({
+						title: res.data.message || '注册失败',
+						icon: 'none'
+					});
+				}
+			},
+			fail: (err) => {
+				uni.showToast({
+					title: '请求失败，请检查网络',
+					icon: 'none'
+				});
+				console.error(err);
+			}
+		});
 		// 如果所有字段都填写了，进行保存操作
 		store.addEmployee({
 			id: Date.now(),
@@ -226,11 +270,9 @@
 			gender: gender.value,
 			idCard: idCard.value,
 			classes: [],
-			authorizations: selectedRole.value === 'executive' ?
-				[ // 执行校长拥有所有权限
-					'执行校长拥有该校区全部管理权限。'
-				] :
-				permissions.value.filter(auth => auth.enabled).map(auth => auth.name), // 老师权限设置
+			authorizations: selectedRole.value === 'executive' ? [ // 执行校长拥有所有权限
+				'执行校长拥有该校区全部管理权限。'
+			] : permissions.value.filter(auth => auth.enabled).map(auth => auth.name), // 老师权限设置
 		});
 
 		uni.showToast({

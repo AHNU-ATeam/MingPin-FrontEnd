@@ -29,31 +29,63 @@ const _sfc_main = {
       });
     },
     handleLogin() {
-      console.log("登录成功");
-      switch (this.role) {
-        case "校长":
-          common_vendor.index.switchTab({
-            url: "/pages/index/index"
+      common_vendor.index.request({
+        url: "http://119.45.239.3:8080/login",
+        // 替换为你的登录接口地址
+        method: "POST",
+        header: {
+          "content-type": "application/x-www-form-urlencoded"
+          // 设置请求头
+        },
+        data: {
+          phone: this.mobile,
+          password: this.password
+        },
+        success: (res) => {
+          if (res.data.code === 1) {
+            common_vendor.index.showToast({
+              title: "登录成功",
+              icon: "success"
+            });
+            switch (this.role) {
+              case "校长":
+                common_vendor.index.switchTab({
+                  url: "/pages/index/index"
+                });
+                break;
+              case "老师":
+                common_vendor.index.navigateTo({
+                  url: "/pages/tindex/tindex"
+                  // 教师界面
+                });
+                break;
+              case "家长":
+                common_vendor.index.navigateTo({
+                  url: "/pages/sindex/sindex"
+                  // 学生界面
+                });
+                break;
+              default:
+                common_vendor.index.switchTab({
+                  url: "/pages/index/index"
+                });
+                break;
+            }
+          } else {
+            common_vendor.index.showToast({
+              title: res.data.message || "登录失败",
+              icon: "none"
+            });
+          }
+        },
+        fail: (err) => {
+          common_vendor.index.showToast({
+            title: "请求失败，请检查网络",
+            icon: "none"
           });
-          break;
-        case "老师":
-          common_vendor.index.navigateTo({
-            url: "/pages/tindex/tindex"
-            // 教师界面
-          });
-          break;
-        case "家长":
-          common_vendor.index.navigateTo({
-            url: "/pages/sindex/sindex"
-            // 学生界面
-          });
-          break;
-        default:
-          common_vendor.index.switchTab({
-            url: "/pages/index/index"
-          });
-          break;
-      }
+          console.error(err);
+        }
+      });
     }
   },
   onLoad(options) {

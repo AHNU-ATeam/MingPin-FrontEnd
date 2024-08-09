@@ -59,38 +59,67 @@ export default {
             //     });
             //     return;
             // }
-            
-            // 执行登录逻辑
-            console.log("登录成功");
 
-            // 根据不同的role跳转到不同的页面
-            switch (this.role) {
-                case '校长':
-                    uni.switchTab({
-                    	url: '/pages/index/index' 
+            // 执行登录逻辑
+            uni.request({
+                url: 'http://119.45.239.3:8080/login', // 替换为你的登录接口地址
+                method: 'POST',
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded' // 设置请求头
+                },
+                data: {
+                    phone: this.mobile,
+                    password: this.password
+                },
+                success: (res) => {
+                    if (res.data.code === 1) {
+                        uni.showToast({
+                            title: '登录成功',
+                            icon: 'success'
+                        });
+                        
+                        // 登录成功后跳转页面
+                        switch (this.role) {
+                            case '校长':
+                                uni.switchTab({
+                                    url: '/pages/index/index'
+                                });
+                                break;
+                            case '老师':
+                                uni.navigateTo({
+                                    url: '/pages/tindex/tindex' // 教师界面
+                                });
+                                break;
+                            case '家长':
+                                uni.navigateTo({
+                                    url: '/pages/sindex/sindex' // 学生界面
+                                });
+                                break;
+                            default:
+                                uni.switchTab({
+                                    url: '/pages/index/index'
+                                });
+                                break;
+                        }
+                    } else {
+                        uni.showToast({
+                            title: res.data.message || '登录失败',
+                            icon: 'none'
+                        });
+                    }
+                },
+                fail: (err) => {
+                    uni.showToast({
+                        title: '请求失败，请检查网络',
+                        icon: 'none'
                     });
-                    break;
-                case '老师':
-                    uni.navigateTo({
-                        url: '/pages/tindex/tindex' // 教师界面
-                    });
-                    break;
-                case '家长':
-                    uni.navigateTo({
-                        url: '/pages/sindex/sindex' // 学生界面
-                    });
-                    break;
-                default:
-                    uni.switchTab({
-                    	url: '/pages/index/index' 
-                    });
-                    break;
-                   
-            }
+                    console.error(err);
+                }
+            });
         }
     },
     onLoad(options) {
-		console.log(options);
+        console.log(options);
         // 在这里接收 navigateTo 跳转时传递的参数
         this.role = options.role || '未知角色';
     }
