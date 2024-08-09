@@ -1,0 +1,64 @@
+
+.select-assistant.data-v-385d4a57 {
+  padding: 20px;
+}
+.checkbox-group.data-v-385d4a57 {
+  margin-bottom: 20px;
+}
+.checkbox-item.data-v-385d4a57 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.checkbox.data-v-385d4a57 {
+  margin-right: 10px;
+}
+.assistant.data-v-385d4a57 {
+  display: flex;
+  flex-direction: row;
+}
+.avatar-img.data-v-385d4a57 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.info.data-v-385d4a57 {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+.name.data-v-385d4a57, .details.data-v-385d4a57 {
+  padding: 5px;
+  display: block;
+}
+.name.data-v-385d4a57 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.details.data-v-385d4a57 {
+  font-size: 14px;
+  color: #666;
+}
+.dashed-line.data-v-385d4a57 {
+  border-bottom: 1px dashed #ccc;
+  margin: 10px 0; /* 调整虚线上下的间距 */
+  width: 100%;
+}
+.footer-nav.data-v-385d4a57 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+.footer-nav button.data-v-385d4a57 {
+  margin: 15px;
+  background-color: #FFA500;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: bold;
+}

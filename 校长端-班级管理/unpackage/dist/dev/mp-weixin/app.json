@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/classList/ClassList",
+    "pages/addClass/addClass",
+    "pages/classEdit/classEdit",
+    "pages/selectTeacher/selectTeacher",
+    "pages/selectAssistant/selectAssistant",
+    "pages/classMessage/classMessage"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}

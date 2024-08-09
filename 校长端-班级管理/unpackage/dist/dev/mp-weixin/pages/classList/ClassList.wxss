@@ -1,0 +1,152 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.class-list.data-v-87982287 {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 10px;
+  background: #f0f0f0;
+}
+.class-totalnum.data-v-87982287 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.class-count.data-v-87982287 {
+  color: #FFA500;
+  font-size: 16px;
+  font-weight: bold;
+}
+.class-item.data-v-87982287 {
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.class-info.data-v-87982287 {
+  display: flex;
+  flex-direction: column;
+}
+.class-name.data-v-87982287 {
+  display: flex;
+  flex-direction: row;
+}
+.name-text.data-v-87982287 {
+  font-size: 17px;
+  font-weight: bold;
+}
+.detail-text.data-v-87982287 {
+  background-color: #fcf2de;
+  font-size: 14px;
+  color: #FFA500;
+  margin-left: 5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.class-teacher.data-v-87982287 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 10px 0px 3px 0px;
+}
+.text.data-v-87982287 {
+  color: #8a8a8a;
+  font-size: 14px;
+  width: 50vw;
+}
+.ass-text.data-v-87982287 {
+  color: #8a8a8a;
+  font-size: 14px;
+  width: 50vw;
+}
+.dashed-line.data-v-87982287 {
+  border-bottom: 1px dashed #b6b6b6;
+  margin: 10px auto;
+  width: 100%;
+}
+.class-num.data-v-87982287 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #8a8a8a;
+  font-size: 14px;
+}
+.num-text.data-v-87982287 {
+  font-size: 14px;
+  color: #FFA500;
+}
+.button-container.data-v-87982287 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: auto;
+  /* 让按钮组整体靠右对齐 */
+}
+.modify-button.data-v-87982287, .delete-button.data-v-87982287 {
+  background-color: transparent;
+  color: #FFA500;
+  border: 1px solid #FFA500;
+  border-radius: 5px;
+  padding: 0px 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.delete-button.data-v-87982287 {
+  margin-left: 10px;
+  /* 仅在删除按钮左侧添加间隔，以减少按钮之间的距离 */
+}
+.margin-bottom.data-v-87982287 {
+  background-color: #f0f0f0;
+  height: 16vh;
+}
+.footer-nav.data-v-87982287 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  /* 统一的橙色背景 */
+  padding: 10px 0;
+  text-align: center;
+}
+.footer-nav button.data-v-87982287 {
+  margin: 15px;
+  background-color: #FFA500;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: bold;
+}

@@ -1,0 +1,47 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/classList/ClassList",
+			"style": {
+				"navigationBarTitleText": "班级管理"
+			}
+		},
+		{
+			"path": "pages/addClass/addClass",
+			"style": {
+				"navigationBarTitleText": "添加班级"
+			}
+		},
+		{
+			"path": "pages/classEdit/classEdit",
+			"style": {
+				"navigationBarTitleText": "修改班级信息"
+			}
+		},
+		{
+			"path": "pages/selectTeacher/selectTeacher",
+			"style": {
+				"navigationBarTitleText": "请选择老师"
+			}
+		},
+		{
+			"path": "pages/selectAssistant/selectAssistant",
+			"style": {
+				"navigationBarTitleText": "请选择助教"
+			}
+		},
+		{
+			"path": "pages/classMessage/classMessage",
+			"style": {
+				"navigationBarTitleText": "班级信息"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}
