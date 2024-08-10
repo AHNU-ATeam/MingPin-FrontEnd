@@ -2,22 +2,22 @@
   <view class="page-container">
     <view class="form-item">
       <text class="label">班级名称 <text class="need-label">*</text></text>
-      <input class="select-input" v-model="formData.className" placeholder="请输入班级名称" />
+      <input class="select-input" :class="{'filled': formData.className}" v-model="formData.className" placeholder="请输入班级名称" />
     </view>
     <view class="dashed-line"></view>
     <view class="form-item">
       <text class="label">班级类型 <text class="need-label">*</text></text>
-      <view class="select-input" @click="showClassTypePicker">{{ formData.classType || '请选择班级类型 >' }}</view>
+      <view class="select-input" :class="{'filled': formData.classType}" @click="showClassTypePicker">{{ formData.classType || '请选择班级类型 >' }}</view>
     </view>
     <view class="dashed-line"></view>
     <view class="form-item">
       <text class="label">带班老师 <text class="need-label">*</text></text>
-      <view class="select-input" @click="selectTeachers">{{ formData.teacherPower || '请选择带班老师 >' }}</view>
+      <view class="select-input" :class="{'filled': formData.teacherPower}" @click="selectTeachers">{{ formData.teacherPower || '请选择带班老师 >' }}</view>
     </view>
     <view class="dashed-line"></view>
     <view class="form-item">
       <text class="label">助教</text>
-      <view class="select-input" @click="selectAssistants">{{ formData.assistantPower || '请选择助教 >' }}</view>
+      <view class="select-input" :class="{'filled': formData.assistantPower}" @click="selectAssistants">{{ formData.assistantPower || '请选择助教 >' }}</view>
     </view>
     <view class="dashed-line"></view>
     <view class="footer-nav">
@@ -191,6 +191,10 @@ export default {
   font-size: 16px;
   color: #999;
 }
+.select-input.filled {
+  color: #000;
+}
+
 .dashed-line{
   border-bottom: 1px dashed #b6b6b6 ;
   margin-bottom: 10px;
