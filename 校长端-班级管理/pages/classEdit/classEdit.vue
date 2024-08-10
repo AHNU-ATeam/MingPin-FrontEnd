@@ -203,7 +203,7 @@ export default {
   text-align: right;
   padding-right: 10px;
   font-size: 16px;
-  color: #999;
+  color: #000;
 }
 .dashed-line{
   border-bottom: 1px dashed #b6b6b6 ;
