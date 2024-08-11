@@ -1,249 +1,446 @@
 <template>
-	<view class="background-color">
-		<!--轮播图-->
-		<view class="swiper">
-			<swiper circular="true" :indicator-dots="true" :autoplay="true" :interval="2000" :duration="1000" indicator-active-color="#f3514f">
-				<swiper-item>
-					<img src="../../static/banner1.png" alt="" class="image">
-				</swiper-item>
-				<swiper-item>
-					<img src="../../static/banner2.png" alt="" class="image">
-				</swiper-item>
-				<swiper-item>
-					<img src="../../static/banner3.jpg" alt="" class="image">
-				</swiper-item>
-			</swiper>
-		</view>
-		<!--功能1-->
-		<view class="function_1 rounded-border">
-			
-			<view class="">
-				<!--男孩版本-->
-				<view class="" v-if="sex==1">
-					<img src="../../static/头像 男孩.png" alt="" class="head">
-					<text class="text_1">{{Sname}}</text>
-					<img src="../../static/20积分.png" alt="" class="score">
-					<text class="text_3">{{score}}</text>
-					<text class="text_2">切换孩子</text>
-					<image src="../../static/切换.png" mode="" class="change"></image>
+	<view>
+		<scroll-view class="container">
+			<uni-card is-full :is-shadow="false" >
+				<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay"
+					:interval="interval" :duration="duration">
+					<swiper-item>
+						<view class="swiper-item "><image src="../../static/hindexswiper/iamge1.jpeg"></image></view>
+					</swiper-item>
+					<swiper-item>	
+						<view class="swiper-item "><image src="../../static/hindexswiper/image2.jpeg"></image></view>
+					</swiper-item>
+					<swiper-item>
+						<view class="swiper-item "><image src="../../static/hindexswiper/image3.jpeg"></image></view>
+					</swiper-item>
+				</swiper>
+			</uni-card>
+    
+			<uni-card :is-shadow="false" margin="6px">
+				<uni-section title="校区管理" type="line">
+					<uni-grid :column="5" :highlight="true" @change="change" :showBorder="false">
+						<uni-grid-item v-for="(item, index) in areaManageList" :index="index" :key="index">
+							<view class="grid-item-box" style="background-color: #fff;">
+								<view :class="item.iconurl"></view>
+								<text class="icontext">{{item.text}}</text>
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+				</uni-section>
+			</uni-card>
+			<uni-card :is-shadow="false" margin="6px">
+				<uni-section title="校区信息" type="line">
+					<uni-grid :column="3" :highlight="false" :showBorder="false">
+						<uni-grid-item v-for="(item, index) in areaInfoList" :index="index" :key="index">
+							<view class="grid-item-box school-information"
+								style="background-color: #fff; text-align: center;">
+								<view class="number" style="font-weight: 700; font-size: 24px;">{{ item.number }}</view>
+								<text class="text"
+									style="font-weight: 400; font-size: 14px; color: #666;">{{ item.label }}</text>
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+				</uni-section>
+			</uni-card>
+
+			<uni-card :is-shadow="false" margin="6px">
+				<uni-section title="当日学员考勤" type="line"></uni-section>
+				<view class="tabs">
+					<view v-for="tab in tabs" :key="tab" :class="['tab', { active: activeTab === tab }]"
+						@click="selectTab(tab)">
+						{{ tab }}
+					</view>
 				</view>
-				
-				<!--女孩版本-->
-				<view class="" v-else>
-					<img src="../../static/头像 女孩.png" alt="" class="head">
-					<text class="text_1">{{Sname}}</text>
-					<img src="../../static/20积分.png" alt="" class="score">
-					<text class="text_3">{{score}}</text>
-					<text class="text_2">切换孩子</text>
-					<image src="../../static/切换.png" mode="" class="change"></image>
-				</view>	
-			</view>
-			
-			
-			<view class="line"></view>
-			
-			
-			<view class="font_1 border1">
-				<navigator url="../CheckWork/CheckWork" hover-class="navigator-hover" class="navigation" open-type="navigate">
-					<image src="../../static/考勤统计.png" mode="" class="image-icon font_2">考勤统计</image>
-				</navigator>
-				<navigator url="../Leave/Leave" hover-class="navigator-hover" class="navigation" open-type="navigate">
-					<image src="../../static/请假.png" mode="" class="image-icon font_2">请假申请</image>
-				</navigator>
-				<navigator url="../SharePhoto/SharePhoto" hover-class="navigator-hover" class="navigation" open-type="navigate">
-					<image src="../../static/共享图库.png" mode="" class="image-icon font_2">共享图库</image>
-				</navigator>
-				<navigator url="../GrowUp/GroupUp" hover-class="navigator-hover" class="navigation" open-type="navigate">
-					<image src="../../static/成长相册.png" mode="" class="image-icon font_2">成长相册</image>
-				</navigator>
-				<navigator url="../PunchClock/PunchClock" hover-class="navigator-hover" class="navigation" open-type="navigate">
-					<image src="../../static/打卡记录-copy.png" mode="" class="image-icon font_2">打卡记录</image>
-				</navigator>
-				<navigator url="../HobbyCheck/HobbyCheck" hover-class="navigator-hover" class="navigation" open-type="navigate">
-					<image src="../../static/评价管理.png" mode="" class="image-icon font_2">习惯测评</image>
-				</navigator>
-			</view>
-		</view>
-		<!--功能2-->
-		<view class="function_2 rounded-border">
-			<text @click="type=1000" class="round1">美好瞬间</text>
-			<text @click="type=2000" class="round2">每日食谱</text>
-			<text @click="type=3000" class="round3">学情反馈</text>
-			<!--美好瞬间-->
-			<view class="" v-if="type==1000">
-				<view class="" v-if="NumberBeaut==0">
-					<image src="../../static/暂无数据.png" mode=""></image>
+				<view class="content">
+					<view class="circle-container">
+						<view class="circle">
+							<text class="circle-text">暑假托班</text>
+							<text class="circle-number">16人</text>
+						</view>
+					</view>
+					<view class="info">
+						<view class="info-item">
+							<text class="info-label">签到：</text><text class="info-number green">0人</text>
+						</view>
+						<view class="info-item">
+							<text class="info-label">缺勤：</text><text class="info-number red">16人</text>
+						</view>
+						<view class="info-item">
+							<text class="info-label">请假：</text><text class="info-number">0人</text>
+						</view>
+					</view>
 				</view>
-				<view class="" v-else>
-					
+			</uni-card>
+
+
+
+			<uni-card :is-shadow="false" margin="6px">
+				<uni-section title="当日员工考勤" type="line"></uni-section>
+				<view class="card3">
+					<view class="card3-left">
+						<text class="iconfont icon-yiqiandao signin"></text>
+						<text class="attended">已签到：<text class="number">{{attendedpeo}}</text>人</text>
+					</view>
+					<view class="card3-right">
+						<text class="iconfont icon-weiqiandao signin"></text>
+						<text class="not-attended">未签到：<text class="number">{{not_attendedpeo}}</text>人</text>
+					</view>
 				</view>
-			</view>
-			<!--每日食谱-->
-			<view class="" v-else-if="type==2000">
-				<view class="" v-if="NumberMenu==0">
-					<image src="../../static/暂无数据.png" mode=""></image>
-				</view>
-				<view class="" v-else>
-					
-				</view>
-			</view>
-			<!--学情反馈-->
-			<view class="" v-if="type==3000">
-				
-			</view>
-		</view>
+			</uni-card>
+
+
+			<uni-card margin="6px">
+				<uni-grid :column="5" :highlight="true" @change="change" :showBorder="false">
+					<uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+						<view class="grid-item-box" style="background-color: #fff;">
+							<view :class="item.iconurl"></view>
+							<text class="icontext">{{item.text}}</text>
+						</view>
+					</uni-grid-item>
+				</uni-grid>
+			</uni-card>
+
+
+
+		</scroll-view>
 	</view>
 </template>
-
 <script>
 	export default {
+		components: {},
 		data() {
 			return {
-				Sname: "乐乐",
-				type:1000,
-				NumberBeaut:0,
-				NumberMenu:0,
-				sex:1,
-				score:0
+				background: ['color1', 'color2', 'color3'],
+				indicatorDots: true,
+				autoplay: true,
+				interval: 2000,
+				duration: 500,
+				attendedpeo: 0,
+				not_attendedpeo: 12,
+				tabs: ['晚托班', '全托班', '午托班', '日托班', '暑假托班'],
+				activeTab: '暑假托班',
+				areaManageList: [{
+						iconurl: 'iconfont icon-jiaoshitongji-01',
+						text: '员工信息',
+						badge: '0'
+					},
+					{
+						iconurl: 'iconfont icon-banjiguanli-',
+						text: '班级管理',
+						badge: '1'
+					},
+					{
+						iconurl: 'iconfont icon-yixietubiao-',
+						text: '考勤设置',
+						badge: '99',
+						type: "warning"
+					},
+					{
+						iconurl: 'iconfont icon-renliandaka',
+						text: '人脸打卡',
+						badge: '2',
+						type: "error"
+					},
+					{
+						iconurl: 'iconfont icon-gengduo',
+						text: '更多'
+					}
+				],
+
+				areaInfoList: [{
+						number: 13,
+						label: '员工'
+					},
+					{
+						number: 22,
+						label: '班级'
+					},
+					{
+						number: 59,
+						label: '在托学员'
+					}
+				],
+
+				list: [{
+						iconurl: 'iconfont icon-Group-copy',
+						text: '带班管理',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-xueyuanguanli',
+						text: '学员管理',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-banjikaoqin',
+						text: '班级考勤',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-banjixiangce',
+						text: '班级相册',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-banjidongtai',
+						text: '班级动态',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-meirishipu',
+						text: '每日食谱',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-xueqingfankui',
+						text: '学情反馈',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-jifenfafang',
+						text: '积分发放',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-shouzhiguanli',
+						text: '收支管理',
+						url: ''
+					}, {
+						iconurl: 'iconfont icon-gengduo1',
+						text: '更多',
+						url: ''
+					},
+
+				]
 			}
 		},
-		onLoad() {
-
-		},
 		methods: {
+			change(e) {
+				let {
+					index
+				} = e.detail
+				this.list[index].badge && this.list[index].badge++
 
+				uni.showToast({
+					title: `点击第${index+1}个宫格`,
+					icon: 'none'
+				})
+			},
+			add() {
+				if (this.dynamicList.length < 9) {
+					this.dynamicList.push({
+						url: `/static/c${this.dynamicList.length+1}.png`,
+						text: `Grid ${this.dynamicList.length+1}`,
+						color: this.dynamicList.length % 2 === 0 ? '#f5f5f5' : "#fff"
+					})
+				} else {
+					uni.showToast({
+						title: '最多添加9个',
+						icon: 'none'
+					});
+				}
+			},
+			del() {
+				this.dynamicList.splice(this.dynamicList.length - 1, 1)
+			},
+			selectTab(tab) {
+			      this.activeTab = tab;
+			    }
 		}
 	}
 </script>
+<style lang="scss">
+	@import url('@/static/iconfontstyle.css');
 
-<style>
-	.font_2{
-		font-size: 23rpx;
+	.container {
+		overflow: hidden;
+		margin-bottom: 100px;
+	}
+
+	.swiper {
+		height: 100px;
+	}
+
+	.swiper-item {
+		display: block;
+		height: 100px;
+		line-height: 100px;
 		text-align: center;
 	}
-	.line{
-		border-bottom: 1rpx solid #8f8f94;
-		margin: 10rpx auto;
-		width: 95%;
-	}
-	.round1{
-		font-size: 35rpx;
-		position: absolute;
-		bottom: 305rpx;
-		left: 30rpx;
-		font-weight: 800;
-	}
-	.round2{
-		font-size: 35rpx;
-		position: absolute;
-		bottom: 305rpx;
-		left: 200rpx;
-		font-weight: 800;
-	}
-	.round3{
-		font-size: 35rpx;
-		position: absolute;
-		bottom: 305rpx;
-		left: 360rpx;
-		font-weight: 800;
-	}
-	.change{
-		width: 50rpx;
-		height: 50rpx;
-		position: absolute;
-		bottom: 700rpx;
-		right: 20rpx;
-	}
-	.score{
-		width: 50rpx;
-		height: 50rpx;
-		position: absolute;
-		bottom: 695rpx;
-		left: 230rpx;
-	}
-	.text_2{
-		position: absolute;
-		bottom: 705rpx;
-		right: 75rpx;
-	}
-	.text_3{
-		position: absolute;
-		bottom: 700rpx;
-		left: 285rpx;
-	}
-	.text_1{
-		position: absolute;
-		bottom: 700rpx;
-		left: 150rpx;
-	}
-	.head{
-		padding-top: 15rpx;
-		padding-left: 15rpx;
-		width: 100rpx;
-		height: 100rpx;
-	}
-	
-	.navigation{
-		display: inline;
-	}
-	.border1{
-		margin-top: -10rpx;
-	}
-	.background-color{
-		height: 100%;
-		width: 100%;
-		background-color: #efefef;
-	}
-	
-	.rounded-border{
-		border: 1px;
-		border-radius: 10px;
-	}
-	
-	.font_1{
-		font-weight: bold;
-		padding-top: -10rpx;
-		font-size: 20rpx;
-	}
-	.image-icon{
-		width: 90rpx;
-		height: 70rpx;
-		padding: 30rpx;
-	}
-	
-	.function_1{
-		width: 720rpx;
-		height: 400rpx;
-		background-color: #fff;
-		margin-left: 15rpx;
-		margin-bottom: 20rpx;
-	}
-	
-	.function_2{
-		width: 720rpx;
-		height: 550rpx;
-		background-color: #fff;
-		margin-left: 15rpx;
-		margin-bottom: 20rpx;
-	}
-	
-	.swiper{
-		margin-bottom: 20rpx;
-	}
-	.swiper-item{
-		padding: 0rpx,30rpx,0rpx,30rpx;
-	}
-	.image{
-		height: 100%;
-		width: 100%;
-	}
-	.text-area {
+
+	.card3 {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
+		padding: 10px;
 	}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.card3-left,
+	.card3-right {
+		margin-top: -15px;
+		padding: 10px;
+		background-color: aliceblue;
+		display: flex;
+		align-items: center;
 	}
+
+	.attended .number {
+		font-size: 20px;
+		font-weight: bold;
+		color: green;
+	}
+
+	.not-attended .number {
+		font-size: 20px;
+		font-weight: bold;
+		color: red;
+	}
+
+	.signin {
+		font-size: 18px;
+		margin-right: 10px;
+	}
+
+	.image {
+		width: 25px;
+		height: 25px;
+	}
+
+	.icontext {
+		font-size: 10px;
+		border-radius: 2px;
+		color: black;
+
+	}
+
+
+	.example-body {
+		/* #ifndef APP-NVUE */
+		// display: block;
+		/* #endif */
+	}
+
+
+	.grid-item-box {
+		height: 50px;
+		flex: 1;
+		// position: relative;
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 15px 0;
+	}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+ 
+}
+
+.tab {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  text-align: center;       /* Center text inside */
+  height: 100%;             /* Make sure it takes the full height */
+  background-color: gainsboro;
+}
+
+.tab.active {
+  background-color: orange;
+}
+
+	.content {
+		display: flex;
+		align-items: center;
+	}
+
+	.circle-container {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.circle {
+	  width: 100px;  /* Smaller width */
+	  height: 100px; /* Smaller height */
+	  border-radius: 50%;
+	  border: 8px solid #f66; /* Smaller border */
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  position: relative;
+	}
+	
+	.circle::before {
+	  content: '';
+	  width: 100%;
+	  height: 100%;
+	  border-radius: 50%;
+	  border: 8px solid #f99; /* Smaller border */
+	  position: absolute;
+	  top: -8px; /* Adjust according to new border size */
+	  left: -8px; /* Adjust according to new border size */
+	  z-index: -1;
+	}
+
+	.circle-text {
+		font-size: 14px;
+		color: #333;
+	}
+
+	.circle-number {
+		font-size: 24px;
+		color: #f33;
+	}
+
+	.info {
+		flex: 1;
+		padding-left: 20px;
+	}
+
+	.info-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+
+	.info-label {
+		width: 50px;
+		color: #333;
+	}
+
+	.info-number {
+		font-weight: bold;
+	}
+
+	.green {
+		color: green;
+	}
+
+	.red {
+		color: red;
+	}
+
+
+
+
+
+	/* #ifdef H5 */
+	@media screen and (min-width: 768px) and (max-width: 1425px) {
+		.swiper {
+			height: 630px;
+		}
+	}
+
+	@media screen and (min-width: 1425px) {
+		.swiper {
+			height: 830px;
+		}
+	}
+
+
+
+	/* #endif */
 </style>
